@@ -38,3 +38,17 @@ function post_has_archive( $args, $post_type ) {
 
 }
 add_filter( 'register_post_type_args', 'post_has_archive', 10, 2 );
+
+/**
+ * NAVIGATION
+ */
+function get_nav($atts) {
+    $str = '<ul>';
+    $menu = wp_get_nav_menu_items($atts, array());
+    foreach($menu as $m){
+        $str .= '<li><a href="'.$m->url.'">'.$m->title.'</a></li>';
+    }
+    $str .= '</ul>';
+
+    return $str;
+}
