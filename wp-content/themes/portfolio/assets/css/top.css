@@ -1,0 +1,13 @@
+#fv {
+    display: flex;
+    align-items: center;
+    height: -webkit-calc(100vh - 50px); height: calc(100vh - 50px);
+    background: #ccc;
+}
+
+#works {
+    padding: 80px 50px;
+}
+#works .inner {
+    display: flex;
+}
