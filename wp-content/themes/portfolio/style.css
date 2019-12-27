@@ -3,7 +3,7 @@ Theme Name:PORTFOLIO
 Template:twentynineteen
 Version:1.4
 */
-
+html {font-size: 14px;}
 h1:not(.site-title):before, h2:before,
 .clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after {
     content: none;
@@ -11,6 +11,7 @@ h1:not(.site-title):before, h2:before,
 ul {padding-left: 0; list-style: none;}
 
 /* font */
+* {font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif !important;}
 .fa {font-family: FontAwesome !important;}
 
 /**
@@ -101,25 +102,41 @@ ul {padding-left: 0; list-style: none;}
  *
  */
 #ft-contact {
-    padding: 50px;
-    background: #aaa;
+    position: relative;
+    padding: 50px 0;
+    color: #fff;
+    background: #008b8b;
+}
+#ft-contact:after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 50%;
+    height: 100%;
+    background: url(./assets/images/ft_contact_bg.jpg) center / cover no-repeat;
+}
+#ft-contact .inner {
+    position: relative;
+    width: 35%;
+    max-width: 900px;
+    margin: 0 55% 0 auto;
 }
 #ft-contact h2 {
     margin: 0 auto 50px;
-    text-align: center;
     line-height: 1em;
 }
 #ft-contact p {
     margin: 0 auto 50px;
     font-size: 14px;
-    text-align: center;
 }
 #ft-contact a {
     display: block;
     width: 100%;
     max-width: 360px;
     padding: 25px 0;
-    margin: 0 auto;
+    margin: 0 auto 0 0;
     background: #000;
     color: #fff;
     font-size: 16px;

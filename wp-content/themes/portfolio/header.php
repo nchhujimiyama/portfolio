@@ -7,7 +7,9 @@
 	<?php wp_head(); ?>
     <?php
     if(is_home() || is_front_page()) {
+        echo '<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css">';
         echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/top.css">';
+        echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>';
     }
     ?>
     <script src="https://kit.fontawesome.com/dbb12507c5.js" crossorigin="anonymous"></script>

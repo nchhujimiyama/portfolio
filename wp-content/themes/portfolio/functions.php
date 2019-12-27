@@ -12,6 +12,7 @@ function theme_enqueue_styles() {
  * ADD POSTTYPE
  */
 add_action( 'init', 'create_post_type' );
+add_action( 'init', 'add_taxonomy' );
 function create_post_type() {
     register_post_type( 'works', [
         'labels' => [
@@ -22,8 +23,48 @@ function create_post_type() {
         'has_archive' => true,
         'menu_position' => 3,
         'show_in_rest' => false,
+        'supports' => array('title','editor','thumbnail','revisions','page-attributes')
     ]);
 }
+function add_taxonomy() {
+    register_taxonomy(
+        'scope',
+        'works',
+        array(
+            'label' => '担当範囲',
+            'singular_label' => '担当範囲',
+            'labels' => array(
+                'all_items' => '担当範囲一覧',
+                'add_new_item' => '担当範囲を追加'
+            ),
+            'public' => true,
+            'show_ui' => true,
+            'show_in_nav_menus' => true,
+            'hierarchical' => true
+        )
+    );
+}
+function add_custom_column( $defaults ) {
+    $defaults['region'] = '担当範囲';
+    return $defaults;
+}
+add_filter('manage_works_posts_columns', 'add_custom_column');
+function add_custom_column_id($column_name, $id) {
+    if( $column_name == 'scope' ) {
+        echo get_the_term_list($id, 'scope', '', ', ');
+    }
+}
+add_action('manage_works_posts_custom_column', 'add_custom_column_id', 10, 2);
+function sort_custom_columns( $columns ) {
+    $columns = array(
+      'cb'     => '<input type="checkbox" />',
+      'title'  => 'タイトル',
+      'scope' => '担当範囲',
+      'date'   => '日時'
+    );
+    return $columns;
+}
+add_filter( 'manage_works_posts_columns', 'sort_custom_columns' );
 
 /**
  * BLOG SLUG CUSTOMIZE
@@ -68,9 +109,29 @@ function get_post_list($posttype, $num) {
     if($the_query->have_posts()) {
         while($the_query->have_posts()) {
             $the_query->the_post();
-            $str .= '<article>
+            $thumb = get_the_post_thumbnail_url('medium');
+            if(empty($thumb)) $thumb = get_stylesheet_directory_uri() . '/assets/images/noimage.gif';
+            $date = '';
+            $category = '';
+            if($posttype === 'post') {
+                $date = '<p class="date"><time>' . get_the_date('Y/m/d') . '</time><time>' . get_the_modified_date('Y/m/d') . '</time></p>';
+                $categories = get_the_category();
+                if(!empty($categories)) {
+                    $category .= '<p class="category">';
+                    foreach($categories as $c) {
+                        $category .= '<span>#' . $c->cat_name . '</span>';
+                    }
+                    $category .= '</p>';
+                }
+            }
+            $str .= '<article class="post-list-item">
                 <a href="' . get_the_permalink() . '">
-                    <h3>' . get_the_title() . '</h3>
+                    <div class="thumb" style="background-image: url(' . $thumb . ');"></div>
+                    <div class="info">
+                        <h3>' . get_the_title() . '</h3>
+                        ' . $category . '
+                        ' . $date . '
+                    </div>
                 </a>
             </article>';
         }

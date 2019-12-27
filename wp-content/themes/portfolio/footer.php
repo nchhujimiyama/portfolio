@@ -22,5 +22,10 @@
 
 <?php wp_footer(); ?>
 
+<?php
+if(is_home() || is_front_page()) {
+    echo '<script src="' . get_stylesheet_directory_uri() . '/assets/js/top.js"></script>';
+}
+?>
 </body>
 </html>
