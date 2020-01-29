@@ -83,6 +83,9 @@ $table_prefix  = 'wp_';
  */
 define('WP_DEBUG', false);
 
+/* Contact form7 のpタグ自動挿入削除 */
+define ('WPCF7_AUTOP', false);
+
 /* 編集が必要なのはここまでです ! WordPress でブログをお楽しみください。 */
 
 /** Absolute path to the WordPress directory. */
