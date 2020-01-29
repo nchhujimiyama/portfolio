@@ -1,4 +1,15 @@
-var swiper = new Swiper(".swiper-container", {
+var newsSwiper = new Swiper(".news-slider", {
+    centeredSlides: false,
+    direction: 'vertical',
+    effect: 'scroll',
+    slidesPerView: 2,
+    loop: true,
+    autoplay: {
+        delay: 5000,
+    },
+});
+
+var swiper = new Swiper(".blog-slider", {
     centeredSlides: false,
     loop: true,
     pagination: {

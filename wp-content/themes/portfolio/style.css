@@ -3,6 +3,7 @@ Theme Name:PORTFOLIO
 Template:twentynineteen
 Version:1.4
 */
+* {outline: none;}
 html {font-size: 14px;}
 h1:not(.site-title):before, h2:before,
 .clear:before, .clear:after, .entry-content:before, .entry-content:after, .comment-content:before, .comment-content:after, .site-header:before, .site-header:after, .site-content:before, .site-content:after, .site-footer:before, .site-footer:after {
@@ -13,6 +14,7 @@ ul {padding-left: 0; list-style: none;}
 /* font */
 * {font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif !important;}
 .fa {font-family: FontAwesome !important;}
+.en {font-family: 'Dosis', sans-serif !important;}
 
 /**
  * HEADER
@@ -25,7 +27,7 @@ ul {padding-left: 0; list-style: none;}
     z-index: 99999;
     width: 100%;
     padding: 0 50px;
-    background: #000;
+    background: #222;
 }
 #masthead h1 {
     display: block;
@@ -44,58 +46,119 @@ ul {padding-left: 0; list-style: none;}
     font-size: 14px;
     line-height: 20px;
 }
+@media screen and (max-width: 767px) {
+    #masthead {
+        padding: 0 5%;
+    }
+    #masthead nav ul {
+        position: fixed;
+        top: 0;
+        right: 0;
+        display: block;
+        height: 100%;
+        padding: 50px 0;
+        background: #222;
+        transform: translate(100%, 0);
+        transition: all .3s;
+    }
+    #masthead nav ul:after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 100%;
+        width: 100vw;
+        height: 100%;
+        background: rgba(0,0,0,.4);
+        opacity: 0;
+        pointer-events: none;
+        transition: all .3s;
+    }
+    #masthead nav ul li {
+        border-top: 1px solid rgba(255,255,255,.1);
+    }
+    #masthead nav ul li:last-child {
+        border-bottom: 1px solid rgba(255,255,255,.1);
+    }
+    #masthead nav ul li a {
+        padding: 15px 60px 15px 30px;
+    }
+    #toggleNav {
+        position: relative;
+        width: 30px;
+        height: 30px;
+        margin-top: 10px;
+    }
+    #toggleNav:before,
+    #toggleNav:after {
+        content: '';
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 10px;
+        width: 100%;
+        height: 2px;
+        background: #fff;
+        transition: all .2s;
+    }
+    #toggleNav:after {
+        top: auto;
+        bottom: 10px;
+    }
 
+    #masthead.active nav ul {
+        transform: translate(0, 0);
+    }
+    #masthead.active nav ul:after {
+        pointer-events: all;
+        opacity: 1;
+    }
+    #masthead.active #toggleNav:before {
+        top: 14px;
+        transform: rotate(45deg);
+    }
+    #masthead.active #toggleNav:after {
+        bottom: 14px;
+        transform: rotate(-45deg);
+    }
+}
+@media screen and (min-width: 768px) {
+    #toggleNav { display: none; }
+}
 
 /**
  * FOOTER
  */
 #colophon {
-    padding: 30px 0 0;
-    background: #efefef;
-}
-#colophon .footer-info {
-    display: flex;
-    justify-content: space-between;
-    width: 90%;
-    max-width: 1024px;
-    margin: 0 auto 30px;
-}
-#colophon .footer-info .sns {
-    font-size: 0;
-    margin-top: 20px;
-}
-#colophon .footer-info .sns a {
-    display: inline-block;
-    color: #000;
-    font-size: 30px;
-    line-height: 1em;
-}
-#colophon .footer-info .sns a + a {
-    margin-left: 15px;
-}
-#colophon .footer-info ul {
-    margin: 0;
-}
-#colophon .footer-info ul li {
-    display: inline-block;
-    font-size: 12px;
-    line-height: 1em;
-    margin: 0;
-}
-#colophon .footer-info ul li + li {
-    margin-left: 1em;
-}
-#colophon .footer-info ul li a {
-    color: rgba(0,0,0,.87);
+    padding: 60px 0;
+    background: #222;
 }
 #colophon .copyright {
-    padding: 10px 50px;
-    color: #aaa;
-    background: #000;
-    font-size: 10px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 12px;
     line-height: 1em;
+    letter-spacing: .05em;
     text-align: center;
 }
+#colophon .copyright span {
+    color: #008b8b;
+}
+#colophon .sns {
+    margin-top: 30px;
+    font-size: 0;
+    text-align: center;
+}
+#colophon .sns a {
+    display: inline-block;
+    color: #fff;
+    font-size: 20px;
+    line-height: 1em;
+}
+#colophon .sns a + a {
+    margin-left: 15px;
+}
+
 
 
 /**
@@ -103,44 +166,57 @@ ul {padding-left: 0; list-style: none;}
  */
 #ft-contact {
     position: relative;
-    padding: 50px 0;
+    padding: 60px 0;
     color: #fff;
     background: #008b8b;
 }
-#ft-contact:after {
-    content: '';
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 50%;
-    height: 100%;
-    background: url(./assets/images/ft_contact_bg.jpg) center / cover no-repeat;
-}
 #ft-contact .inner {
-    position: relative;
-    width: 35%;
-    max-width: 900px;
-    margin: 0 55% 0 auto;
-}
-#ft-contact h2 {
-    margin: 0 auto 50px;
-    line-height: 1em;
-}
-#ft-contact p {
-    margin: 0 auto 50px;
-    font-size: 14px;
-}
-#ft-contact a {
-    display: block;
+    display: flex;
+    justify-content: space-around;
     width: 100%;
-    max-width: 360px;
-    padding: 25px 0;
-    margin: 0 auto 0 0;
-    background: #000;
-    color: #fff;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1em;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+#ft-contact .inner div {
+    flex: 1;
+    font-size: 0;
+}
+#ft-contact .inner div span {
+    display: inline-block;
+    height: 50px;
+    font-size: 14px;
+    line-height: 50px;
+}
+#ft-contact .inner div i {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    margin-right: 1em;
+    font-size: 20px;
+    line-height: 50px;
     text-align: center;
+    background: #222;
+}
+@media screen and (max-width: 767px) {
+    #ft-contact {
+        padding: 45px 0;
+    }
+    #ft-contact .inner {
+        display: block;
+        padding: 0 5%;
+    }
+    #ft-contact .inner div + div {
+        margin-top: 10px;
+    }
+    #ft-contact .inner div span {
+        height: 40px;
+        line-height: 40px;
+    }
+    #ft-contact .inner div i {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        line-height: 40px;
+    }
 }

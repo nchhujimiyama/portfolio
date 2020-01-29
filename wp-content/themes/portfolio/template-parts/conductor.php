@@ -1,11 +1,10 @@
-<section id="ft-contact">
+<div id="ft-contact">
     <div class="inner">
-        <h2>CONTACT</h2>
-        <p>
-            Web制作・コンサルティング・システム開発に関するお問い合わせ・<br>
-            お見積もり依頼は、問い合わせフォームより受け付けております。<br>
-            まずはお気軽にご相談ください。
-        </p>
-        <a href="<?= home_url(); ?>/contact/">お問い合わせはこちら</a>
+        <div class="mail">
+            <i class="fa fa-envelope-o" aria-hidden="true"></i><span class="en">info@atelier-hornet.com</span>
+        </div>
+        <div class="address">
+            <i class="fa fa-map-marker" aria-hidden="true"></i><span>静岡県沼津市</span>
+        </div>
     </div>
-</section>
+</div>
