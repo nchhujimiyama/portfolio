@@ -156,7 +156,7 @@ get_header();
                     技術的な内容や日々のできごとをブログとしてまとめています。
                 </p>
                 <div class="content">
-                    <?= get_post_list('post', 6); ?>
+                    <?= get_post_list('post', 3); ?>
                 </div>
                 <div class="btn">
                     <a href="">ブログの一覧はこちら</a>
