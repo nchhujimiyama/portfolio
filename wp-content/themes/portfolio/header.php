@@ -13,6 +13,9 @@
         echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/top.css">';
         echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>';
     }
+    if(is_post_type_archive('works')) {
+        echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/works.css">';
+    }
     ?>
     <script src="https://kit.fontawesome.com/dbb12507c5.js" crossorigin="anonymous"></script>
 </head>
@@ -31,3 +34,14 @@
 		</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
+        <?php if(!is_home() && !is_front_page()) : ?>
+            <section class="page_header">
+                <?php
+                $page_title = get_the_title();
+                if(is_archive()) {
+                    $page_title = esc_html(get_post_type_object(get_post_type())->label);
+                }
+                ?>
+                <h1><?= $page_title; ?></h1>
+            </section>
+        <?php endif; ?>
