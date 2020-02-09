@@ -226,14 +226,21 @@ ul {padding-left: 0; list-style: none;}
  */
 .page_header {
     margin-bottom: 60px;
-    padding: 30px 0;
-    background: #008b8b;
+    padding: 60px 0 0;
 }
 .page_header h1 {
     margin: 0 auto;
-    color: #fff;
+    color: #222;
     font-size: 24px;
     letter-spacing: .05em;
     line-height: 1em;
     text-align: center;
+}
+.page_header h1:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    margin: 15px auto 0;
+    background: #008b8b;
 }
