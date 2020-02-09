@@ -1,0 +1,153 @@
+.inner {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+h2 {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 50px;
+    padding: 0 50px;
+    color: #008b8b;
+    letter-spacing: .05em;
+}
+@media screen and (max-width: 767px) {
+    .inner {
+        padding: 0 5%;
+    }
+    h2 {
+        margin-bottom: 30px;
+        padding: 0 5%;
+        font-size: 18px;
+    }
+}
+
+#about {
+    margin-bottom: 100px;
+}
+.data {
+    display: flex;
+}
+.data .thumb {
+    width: 200px;
+    font-size: 0;
+}
+.data .thumb img {
+    width: 100%;
+}
+.data .info {
+    margin-left: 50px;
+}
+.data dl {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0 auto;
+}
+.data dt {
+    width: 100px;
+}
+.data dd {
+    width: -webkit-calc(100% - 100px);
+    width: calc(100% - 100px);
+    margin: 0 auto;
+}
+.data p {
+    width: 100%;
+    margin: 20px auto 0;
+}
+@media screen and (max-width: 767px) {
+    #about {
+        margin-bottom: 60px;
+    }
+    .data {
+        display: block;
+    }
+    .data .info {
+        margin: 30px auto 0;
+        font-size: 10px;
+    }
+    .data dl {
+        align-items: inherit;
+    }
+    .data dt {
+        width: 60px;
+    }
+    .data dd {
+        width: -webkit-calc(100% - 60px);
+        width: calc(100% - 60px);
+    }
+    .data p {
+        font-size: 12px;
+    }
+}
+
+
+#strong {
+    margin-bottom: 100px;
+}
+#strong .inner {
+    display: flex;
+}
+#strong .inner > div {
+    flex: 1;
+    padding: 30px;
+}
+.like {
+    border: 2px solid #008b8b;
+}
+.dislike {
+    margin-left: 50px;
+    color: #fff;
+    background: #008b8b;
+    border: 2px solid #008b8b;
+}
+#strong h3 {
+    margin: 0 auto 30px;
+    font-size: 18px;
+    text-align: center;
+}
+#strong li {
+    position: relative;
+    padding-left: 1.5em;
+}
+#strong li + li {
+    margin-top: .5em
+}
+#strong .dislike li {
+    font-weight: bold;
+}
+#strong li:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    margin: auto;
+    font-family: FontAwesome !important;
+}
+#strong .like li:before {
+    content: '\f10c';
+}
+#strong .dislike li:before {
+    content: '\f00d';
+}
+@media screen and (max-width: 767px) {
+    #strong {
+        margin-bottom: 60px;
+    }
+    #strong .inner {
+        display: block;
+    }
+    #strong .inner > div {
+        padding: 30px 15px;
+    }
+    .dislike {
+        margin: 30px auto 0;
+    }
+    #strong h3 {
+        margin-bottom: 15px;
+    }
+    #strong li {
+        font-size: 12px;
+    }
+}
