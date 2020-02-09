@@ -179,7 +179,6 @@ ul {padding-left: 0; list-style: none;}
     padding: 0 50px;
 }
 #ft-contact .inner div {
-    flex: 1;
     font-size: 0;
 }
 #ft-contact .inner div span {
