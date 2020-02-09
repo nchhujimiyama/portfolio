@@ -16,6 +16,9 @@
     if(is_post_type_archive('works')) {
         echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/works.css">';
     }
+    if(is_page('about')) {
+        echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/about.css">';
+    }
     ?>
     <script src="https://kit.fontawesome.com/dbb12507c5.js" crossorigin="anonymous"></script>
 </head>
