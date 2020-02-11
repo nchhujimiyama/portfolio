@@ -72,7 +72,10 @@ add_filter( 'manage_works_posts_columns', 'sort_custom_columns' );
 function post_has_archive( $args, $post_type ) {
 
 	if ( 'post' == $post_type ) {
-		$args['rewrite'] = true;
+		$args['rewrite'] = array(
+            'slug' => 'blog',
+            'with_front' => false,
+        );
 		$args['has_archive'] = 'blog';
 	}
 	return $args;
