@@ -13,8 +13,14 @@
         echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/top.css">';
         echo '<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script>';
     }
+    if(is_post_type_archive('post') || is_category() || is_author()) {
+        echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/blog.css">';
+    }
     if(is_post_type_archive('works')) {
         echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/works.css">';
+    }
+    if(is_single()) {
+        echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/single.css">';
     }
     if(is_page('about')) {
         echo '<link rel="stylesheet" href="' . get_stylesheet_directory_uri() . '/assets/css/about.css">';
@@ -43,6 +49,9 @@
                 $page_title = get_the_title();
                 if(is_archive()) {
                     $page_title = esc_html(get_post_type_object(get_post_type())->label);
+                }
+                if(is_post_type_archive('post')) {
+                    $page_title = 'ブログ';
                 }
                 ?>
                 <h1><?= $page_title; ?></h1>
