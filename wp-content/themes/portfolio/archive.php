@@ -6,21 +6,25 @@ get_header();
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php if ( have_posts() ) : ?>
-
+		<?php if ( have_posts() ) { ?>
+			<div class="posts">
 
 			<?php
 			// Start the Loop.
 			while ( have_posts() ) :
 				the_post();
 
-				get_template_part( 'template-parts/content/content', 'excerpt' );
+				get_template_part( 'template-parts/content/content', 'blog' );
 
 			endwhile;
-		else :
+			?>
+			</div>
+			<?php
+			if (function_exists( 'the_pagination' )) the_pagination();
+		} else {
 			get_template_part( 'template-parts/content/content', 'none' );
 
-		endif;
+		}
 		?>
 		</main><!-- #main -->
 	</div><!-- #primary -->

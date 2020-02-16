@@ -1,0 +1,127 @@
+#main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 50px;
+}
+@media screen and (max-width: 767px) {
+    #main {
+        padding: 0 5%;
+    }
+}
+
+.page_header {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+    padding: 60px 50px 0;
+}
+@media screen and (max-width: 767px) {
+    .page_header {
+        margin-bottom: 30px;
+        padding: 30px 5% 0;
+    }
+}
+
+#main .entry-content {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.26);
+}
+.entry-content h1 {
+    padding: 15px 20px;
+    color: #fff;
+    font-size: 24px;
+    background: #008b8b;
+}
+.entry-content h2 {
+    padding: 15px 0;
+    color: #222;
+    font-size: 20px;
+    border-top: 2px solid #008b8b;
+    border-bottom: 2px solid #008b8b;
+}
+.entry-content h3 {
+    padding: 5px 0 5px 10px;
+    color: #222;
+    font-size: 18px;
+    border-left: 5px solid #008b8b;
+}
+.entry-content h4 {
+    color: #222;
+    font-size: 18px;
+}
+.entry-content h5 {
+    color: #222;
+    font-size: 16px;
+}
+@media screen and (max-width: 767px) {
+    #main .entry-content {
+        padding: 5%;
+    }
+}
+
+.entry .entry-footer {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto 20px;
+    text-align: right;
+}
+
+
+/* post-nav */
+.post-navigation {
+    width: 100%;
+    max-width: 800px;
+    margin: 30px auto 0;
+}
+.post-navigation .nav-links {
+    flex-direction: row-reverse;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.post-navigation .nav-links .nav-previous {
+    flex: 1;
+    order: 2;
+}
+.post-navigation .nav-links .nav-next {
+    flex: 1;
+    order: 1;
+}
+.post-navigation .nav-links .nav-previous + .nav-next {
+    margin: 0 0 0 20px;
+}
+.post-navigation .nav-links a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,.26);
+    transition: all .2s;
+}
+.post-navigation .nav-links a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 7px rgba(0,0,0,.26);
+}
+.post-navigation .nav-links a br {
+    display: none;
+}
+.post-navigation .nav-links a .meta-nav {
+    display: block;
+    margin-bottom: 1em;
+    font-size: 10px;
+}
+.post-navigation .nav-links a .post-title {
+    font-size: 14px;
+}
+
+/* comment */
+.comments-area {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}

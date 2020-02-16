@@ -10,6 +10,9 @@ h1:not(.site-title):before, h2:before,
     content: none;
 }
 ul {padding-left: 0; list-style: none;}
+body:not(.home) {
+    background: #f5f5f5;
+}
 
 /* font */
 * {font-family: Helvetica, '游ゴシック', 'Yu Gothic', YuGothic, HiraKakuProN-W3, 'メイリオ', Meiryo, sans-serif !important;}
@@ -242,5 +245,39 @@ ul {padding-left: 0; list-style: none;}
     width: 80px;
     height: 3px;
     margin: 15px auto 0;
+    background: #008b8b;
+}
+
+
+/**
+ * PAGINATION
+ */
+.pagination {
+    margin-top: 60px;
+}
+.pagination ul {
+    margin: 0 auto;
+    font-size: 0;
+    text-align: center;
+}
+.pagination li {
+    display: inline-block;
+}
+.pagination li + li {
+    margin-left: 1px;
+}
+.pagination li span,
+.pagination li a {
+    display: block;
+    width: 30px;
+    height: 30px;
+    color: #222;
+    font-size: 12px;
+    line-height: 30px;
+    text-align: center;
+    background: #ccc;
+}
+.pagination li span {
+    color: #fff;
     background: #008b8b;
 }
