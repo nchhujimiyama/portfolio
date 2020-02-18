@@ -34,7 +34,7 @@
 <div id="page" class="site">
 		<header id="masthead" class="<?php echo is_singular() && twentynineteen_can_show_post_thumbnail() ? 'site-header featured-image' : 'site-header'; ?>">
             <div class="logo">
-                <h1 class="site-title">NCH</h1>
+                <h1 class="site-title"><a href="<?= home_url(); ?>">NCH</a></h1>
             </div>
             <nav>
 				<?php echo get_nav('グローバルナビゲーション'); ?>
