@@ -64,7 +64,14 @@ get_header();
                 </li>
             </ul>
             <div class="btn">
-                <a href="<?= home_url(); ?>/request/">サービス詳細はこちら</a>
+                <a class="tveffect" href="<?= home_url(); ?>/request/">
+                    <div>サービ<span class="rot1">ス</span>詳<span class="rot2">細</span>はこち<span class="rot3">ら</span></div>
+                    <div>
+                        <div>サービス詳細はこちら</div>
+                        <div>サービス詳細はこちら</div>
+                        <div>サービス詳細はこちら</div>
+                    </div>
+                </a>
             </div>
         </section>
         <div id="career">
@@ -124,8 +131,10 @@ get_header();
                             }
                         }
 
+                        $link = get_post_meta(get_the_ID(), 'EntryData_WorksUrl', true);
+
                         echo '<article class="swiper-slide">
-                            <a href="' . get_the_permalink() . '">
+                            <a href="' . $link . '" target="_blank">
                                 <div class="thumb" style="background-image: url(' . $thumb . ');"></div>
                                 <div class="info">
                                     <p class="tag">' . $scope . '</p>
@@ -146,7 +155,14 @@ get_header();
                 ?>
             </div>
             <div class="btn">
-                <a href="<?= home_url(); ?>/works/">他の制作実績はこちら</a>
+                <a class="tveffect" href="<?= home_url(); ?>/works/">
+                    <div><span class="rot4">他</span>の制作実績<span class="rot5">は</span>こ<span class="rot6">ち</span>ら</div>
+                    <div>
+                        <div>他の制作実績はこちら</div>
+                        <div>他の制作実績はこちら</div>
+                        <div>他の制作実績はこちら</div>
+                    </div>
+                </a>
             </div>
         </section>
         <section id="blog">
@@ -159,7 +175,14 @@ get_header();
                     <?= get_post_list('post', 3); ?>
                 </div>
                 <div class="btn">
-                    <a href="<?= home_url(); ?>/blog/">ブログの一覧はこちら</a>
+                    <a class="tveffect" href="<?= home_url(); ?>/blog/">
+                        <div>ブ<span class="rot2">ロ</span>グの<span class="rot1">一</span>覧は<span class="rot4">こ</span>ちら</div>
+                        <div>
+                            <div>ブログの一覧はこちら</div>
+                            <div>ブログの一覧はこちら</div>
+                            <div>ブログの一覧はこちら</div>
+                        </div>
+                    </a>
                 </div>
             </div>
         </section>
