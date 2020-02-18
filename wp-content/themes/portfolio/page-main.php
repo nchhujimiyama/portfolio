@@ -64,7 +64,7 @@ get_header();
                 </li>
             </ul>
             <div class="btn">
-                <a href="#">サービス詳細はこちら</a>
+                <a href="<?= home_url(); ?>/request/">サービス詳細はこちら</a>
             </div>
         </section>
         <div id="career">
@@ -146,7 +146,7 @@ get_header();
                 ?>
             </div>
             <div class="btn">
-                <a href="#">他の制作実績はこちら</a>
+                <a href="<?= home_url(); ?>/works/">他の制作実績はこちら</a>
             </div>
         </section>
         <section id="blog">
@@ -159,7 +159,7 @@ get_header();
                     <?= get_post_list('post', 3); ?>
                 </div>
                 <div class="btn">
-                    <a href="">ブログの一覧はこちら</a>
+                    <a href="<?= home_url(); ?>/blog/">ブログの一覧はこちら</a>
                 </div>
             </div>
         </section>
