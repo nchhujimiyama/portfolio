@@ -50,7 +50,7 @@
                 if(is_archive()) {
                     $page_title = esc_html(get_post_type_object(get_post_type())->label);
                 }
-                if(is_post_type_archive('post')) {
+                if(get_post_type($post) == 'post') {
                     $page_title = 'ブログ';
                 }
                 ?>
