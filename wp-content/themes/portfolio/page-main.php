@@ -25,6 +25,7 @@ get_header();
                         while($the_query->have_posts()) {
                             $the_query->the_post();
 
+                            $target = '';
                             $link = get_the_permalink();
                             $date = get_the_date('Y.m.d');
                             switch(get_post_type(get_the_ID())) {
@@ -33,11 +34,13 @@ get_header();
                                     break;
                                 case 'works':
                                     $post_type = '制作実績';
+                                    $target = 'target="_blank"';
+                                    $link = get_post_meta(get_the_ID(), 'EntryData_WorksUrl', true);
                                     break;
                             }
                             $title = get_the_title();
 
-                            echo '<li class="swiper-slide"><a href="' . $link . '"><time>' . $date . '</time><span>' . $post_type . '</span>' . $title . '</a></li>';
+                            echo '<li class="swiper-slide"><a href="' . $link . '" ' . $target . '><time>' . $date . '</time><span>' . $post_type . '</span>' . $title . '</a></li>';
                         }
                     }
                     wp_reset_postdata();
