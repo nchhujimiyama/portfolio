@@ -126,7 +126,7 @@ accent : #ff406c
 }
 @media screen and (max-width: 767px) {
     #service {
-        padding: 60px 5%;
+        padding: 60px 5% 90px;
     }
     #service ul {
         display: block;
@@ -451,7 +451,7 @@ accent : #ff406c
 }
 @media screen and (max-width: 767px) {
     #works {
-        padding: 60px 0;
+        padding: 60px 0 90px;
     }
     #works .ttl {
         margin-bottom: 30px;
@@ -576,7 +576,7 @@ accent : #ff406c
 }
 @media screen and (max-width: 767px) {
     #blog {
-        padding: 60px 0;
+        padding: 60px 0 90px;
     }
     #blog .inner {
         padding: 0 5%;

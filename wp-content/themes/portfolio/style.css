@@ -34,9 +34,14 @@ body:not(.home) {
 }
 #masthead h1 {
     display: block;
+    padding: 10px 0;
     color: #fff;
     font-size: 20px;
     line-height: 50px;
+}
+#masthead h1 img {
+    display: block;
+    height: 30px;
 }
 #masthead nav ul {
     display: flex;

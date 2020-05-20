@@ -187,6 +187,7 @@ get_header();
             </div>
         </section>
 
+        <?php /*
         <section id="contact">
             <div class="inner">
                 <h2 class="en">CONTACT US...</h2>
@@ -197,6 +198,7 @@ get_header();
                 <?= do_shortcode('[contact-form-7 id="73" title="footer contact"]'); ?>
             </div>
         </section>
+        */ ?>
     </main><!-- #main -->
 </div><!-- #primary -->
 
